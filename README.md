@@ -1,6 +1,6 @@
 # docker-ros2-xarm
 
-[![Docker](https://github.com/iomz/docker-ros2-xarm/actions/workflows/docker.yml/badge.svg)](https://github.com/iomz/docker-ros2-xarm/actions/workflows/docker.yml)
+[![Build](https://github.com/iomz/docker-ros2-xarm/actions/workflows/build.yml/badge.svg)](https://github.com/iomz/docker-ros2-xarm/actions/workflows/build.yml)
 [![Docker Image Size](https://ghcr-badge.egpl.dev/iomz/docker-ros2-xarm/size?label=Image%20Size)](https://github.com/iomz/docker-ros2-xarm/pkgs/container/ros2-xarm)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

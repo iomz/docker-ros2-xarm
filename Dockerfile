@@ -1,4 +1,7 @@
 FROM ros:humble
+LABEL org.opencontainers.image.source = "https://github.com/iomz/docker-ros2-xarm"
+LABEL maintainer="iomz@sazanka.io"
+
 ARG TARGETARCH
 
 ENV ROS_DISTRO=humble
