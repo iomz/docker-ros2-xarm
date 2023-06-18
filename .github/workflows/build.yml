@@ -43,7 +43,7 @@ jobs:
         with:
           registry: ${{ env.registry }}
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GHCR_IO_TOKEN }}
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
@@ -52,3 +52,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=registry,ref=iomz/ros2-xarm:latest
+          cache-to: type=inline
