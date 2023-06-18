@@ -6,8 +6,8 @@ on:
     tags:
       - "v*.*.*"
 env:
-  IMAGE_NAME: iomz/ros2-xarm
-  REGISTRY: ghcr.io
+  image_name: iomz/ros2-xarm
+  registry: ghcr.io
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -22,8 +22,8 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            ${IMAGE_NAME}
-            ${REGISTRY}/${IMAGE_NAME}
+            ${{ env.image_name }}
+            ${{ env.registry }}/${{ env.image_name }}
           # generate Docker tags based on the following events/attributes
           tags: |
             type=schedule
@@ -39,7 +39,7 @@ jobs:
       - name: Log in to registry
         uses: docker/login-action@v2
         with:
-          registry: ${REGISTRY}
+          registry: ${{ env.registry }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push Docker image
