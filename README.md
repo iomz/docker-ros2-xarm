@@ -1,15 +1,19 @@
 # docker-ros2-xarm
 
 [![Build](https://github.com/iomz/docker-ros2-xarm/actions/workflows/build.yml/badge.svg)](https://github.com/iomz/docker-ros2-xarm/actions/workflows/build.yml)
-[![Docker Image Size](https://ghcr-badge.egpl.dev/iomz/docker-ros2-xarm/size?label=Image%20Size)](https://github.com/iomz/docker-ros2-xarm/pkgs/container/ros2-xarm)
+[![Docker Image Size](https://ghcr-badge.egpl.dev/iomz/ros2-xarm/size?label=Image%20Size)](https://github.com/iomz/docker-ros2-xarm/pkgs/container/ros2-xarm)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A multi-arch minimal docker image for ros2+xarm.
 
-The image contains [xArm-Developer/xarm_ros2](https://github.com/xarm-developer/xarm_ros2/tree/humble) for [Humble Hawksbill](https://docs.ros.org/en/humble/Releases/Release-Humble-Hawksbill.html).
+The image contains [xArm-Developer/xarm_ros2](https://github.com/xarm-developer/xarm_ros2/tree/humble) for ROS [Humble Hawksbill](https://docs.ros.org/en/humble/Releases/Release-Humble-Hawksbill.html).
 
 - linux/amd64: includes Moveit2, Gazebo, gazebo_ros_pkgs, and all the xarm_ros2 packages
-- linux/arm64: only with xarm\_[api,description,msgs,sdk] packages
+- linux/arm64: only with following xarm_ros2 packages
+  - `xarm_api`
+  - `xarm_description`
+  - `xarm_msgs`
+  - `xarm_sdk`
 
 ## Usage
 
@@ -48,7 +52,7 @@ Commands:
   Call `ros2 <command> -h` for more detailed usage.
 ```
 
-## (Example) Launch for Lite6 runnning at 10.0.0.6
+## (Example) Launch for Lite6 with an IP address `10.0.0.6`
 
 ```bash
 docker run --rm -it ros2-xarm launch xarm_api lite6_driver.launch.py robot_ip:=10.0.0.6
