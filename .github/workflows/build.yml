@@ -21,7 +21,6 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            ${{ env.image_name }}
             ${{ env.registry }}/${{ env.image_name }}
           # generate Docker tags based on the following events/attributes
           tags: |
@@ -42,7 +41,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push Docker image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: .
           push: true
