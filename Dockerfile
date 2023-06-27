@@ -43,10 +43,7 @@ RUN case ${TARGETPLATFORM} in \
     "linux/arm64") . /opt/ros/${ROS_DISTRO}/setup.bash && colcon build --packages-select  xarm_api xarm_description xarm_msgs xarm_sdk ;; \
     esac
 
-# python
-#RUN apt-get install python3 python3-pip \
-#    && rm -rf /var/lib/apt/lists/*
-
+# source the setup.bash if running bash interactively (for debugging)
 RUN echo "source /build/xarm_ros2/install/setup.bash" | tee -a /root/.bashrc
 
 COPY entrypoint.sh entrypoint.sh
