@@ -1,0 +1,20 @@
+ufactory_driver:
+  ros__parameters:
+    services:
+      #debug: true
+      clean_gripper_error: true
+      get_servo_angle: true
+      get_vacuum_gripper: true
+      motion_enable: true
+      move_gohome: true
+      open_lite6_gripper: true
+      close_lite6_gripper: true
+      stop_lite6_gripper: true
+      set_gripper_enable: true
+      set_gripper_mode: true
+      set_gripper_position: true
+      set_gripper_speed: true
+      set_mote: true
+      set_servo_angle: true
+      set_state: true
+      set_vacuum_gripper: true

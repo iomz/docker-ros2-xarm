@@ -37,6 +37,9 @@ RUN case ${TARGETPLATFORM} in \
 # this is missing for linux/arm64
 RUN apt-get install -y ros-${ROS_DISTRO}-control-msgs
 
+# copy the user confing for xarm_api
+COPY xarm_api/config/xarm_user_params.yaml /build/xarm_ros2/xarm_api/config/
+
 # build with colcon
 RUN case ${TARGETPLATFORM} in \
     "linux/amd64") . /opt/ros/${ROS_DISTRO}/setup.bash && colcon build ;; \
